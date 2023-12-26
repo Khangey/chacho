@@ -1,0 +1,546 @@
+/* **************** general links **************** */
+
+a {
+  text-decoration: underline;
+  text-decoration-color: var(--light-gray);
+  text-decoration-thickness: 2px;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: inherit;
+  text-decoration-thickness: 2px;
+}
+
+a:visited,
+body.night a:visited {
+  color: var(--dark-gray);
+}
+
+@media screen and (max-width:1020px) {
+  a:hover {
+    text-decoration: underline !important;
+  }
+
+  .single-column-header-container a,
+  .single-column-header-container a:visited,
+  a.navbar-brand,
+  a.navbar-brand:visited {
+    text-decoration: none !important;
+  }
+}
+
+/* **************** post title **************** */
+
+.stream-container .post .post-head-wrapper-text-only {
+  padding: 30px var(--page-margin) 0;
+}
+
+.stream-container .post .post-head-wrapper-text-only .post-title {
+  line-height: 1.5em;
+}
+
+.post-title-main {
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+
+.post-subtitle,
+.stream-container .post .post-head-wrapper .post-title .post-subtitle,
+.stream-container .post .post-head-wrapper-text-only .post-title .post-subtitle {
+  font-size: 18px;
+  line-height: 1.5;
+  padding: 0;
+  margin-top: 11px;
+  margin-bottom: 27px;
+}
+
+.post-meta {
+  display: flex;
+  align-items: baseline;
+  line-height: 1.5;
+  gap: 1.5rem;
+}
+
+.post-title-main + .post-meta,
+.post-title-main + .stream-container .post .post-head-wrapper-text-only .post-title .post-meta {
+  margin-top: 13px !important;
+}
+
+.post-meta .post-time,
+.post-meta .material-icons,
+.post-meta a {
+  opacity: .6;
+}
+
+.post-meta a {
+  color: inherit;
+}
+
+.post-meta .post-time {
+  display: inline-block;
+}
+
+.draft-label {
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 0 5px 0 5px ;
+  border-radius: 20px !important;
+}
+
+.draft-label a {
+  text-decoration: none;
+}
+
+.draft-label *:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-item-info-wrapper .draft-label {
+  margin-left: 1rem;
+}
+
+@media (max-width: 500px) {
+  .post-meta {
+    display: block;
+  }
+  .post-meta .post-time {
+    display: block;
+  }
+  .post-meta .post-tags,
+  .post-meta .post-cats {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+}
+
+/* **************** post body **************** */
+
+.stream-container .post .post-body-wrapper {
+  padding: 31px var(--page-margin) 35px;
+}
+
+.post-body h2 {
+  margin-top: calc(20px + 1em);
+}
+
+.post-body h3{
+  margin-top: calc(10px + 1em);
+}
+
+.post-body h4 {
+  margin-top: calc(5px + 1em);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.post-body b:not(:lang(en)),
+.post-body strong:not(:lang(en)) {
+  text-emphasis: dot ;
+  text-emphasis-position: under right;
+}
+
+.post-body em:not(:lang(en)) {
+  text-emphasis: open dot ;
+  text-emphasis-position: under right;
+}
+
+.post-body u,
+.post-body underline {
+  text-decoration: underline;
+  text-decoration-color: var(--gray);
+}
+
+.post-body del,
+body.night .post-body del,
+body.night .post-body p del {
+  color: var(--dark-gray);
+}
+
+.post-body hr {
+  padding: 0;
+  border: none;
+  width: 100%;
+  display: block;
+  text-align: center;
+  height: var(--hr-height);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.post-body hr::after {
+  content: "//";
+  /* content: "\12199"; */
+  /* content: "⁂"; */
+  /* content: "❡"; */
+  color: var(--dark-gray);
+  font-size: var(--hr-height);
+}
+
+.post-body .mark,
+.post-body mark {
+  background-color: var(--mark);
+}
+
+.post-body code {
+  padding-top: .2rem;
+  padding-bottom: .2rem;
+  /* vertical-align: top; */
+}
+
+.post-body details {
+  margin-bottom: 1rem;
+}
+
+/* .post-body details[open] summary {
+  margin-bottom: 1rem;
+} */
+
+/* https://stackoverflow.com/a/22183475 */
+.post-body details summary:not([class]),
+.post-body details .fold__details {
+  background: rgba(3,123,186,7%);
+  padding-left: var(--page-margin);
+  padding-right: var(--page-margin);
+  margin-left: calc(-1 * var(--page-margin));
+  margin-right: calc(-1 * var(--page-margin));
+}
+
+.post-body details .fold__details {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.post-body details .fold__details *:last-child,
+.post-body details .fold__details *:last-child:last-child {
+  margin-bottom: 0;
+}
+
+.post-body li>p {
+  margin-bottom: 0;
+}
+
+.post-body ul>li,
+.post-body ol>li,
+.post-series * {
+  margin-bottom: 0.5rem;
+}
+
+/* experimental (CSS Selectors Level 4 WD) */
+.post-body li:has(>input[checked="checked"]),
+.post-body li:has(>input:checked) {
+  text-decoration: line-through;
+}
+
+/* style for definition lists (dl) */
+
+.post-body dl:not(.post-series) {
+  display: grid;
+  gap: 0.5rem 1rem;
+}
+
+.post-body dt {
+  font-weight: bold;
+  grid-column: 1;
+}
+
+.post-body dl:not(.post-series) dd {
+  margin-bottom: 0;
+  margin-left: 40px;
+}
+
+@media (min-width: 600px) {
+  .post-body dl:not(.post-series) {
+    grid-template-columns: fit-content(50%) auto;
+  }
+
+  .post-body dl:not(.post-series) dd {
+    grid-column: 2;
+    margin-left: 0;
+  }
+}
+
+body.night .post-body dl,
+body.night .post-body dt,
+body.night .post-body dd,
+body.night .post-body .post-series dl
+body.night .post-body .post-series dt
+body.night .post-body .post-series dd {
+  color: #e6e6e6;
+}
+
+.post-body .footnote-ref {
+  padding: 0 4px;
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+  text-decoration: none;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+body.night .post-body ruby,
+body.night .post-body ruby *,
+body.night .post-body summary {
+  color: #e6e6e6;
+}
+
+body.night .post-body .table th,
+body.night .post-body .table td {
+  border-top-color: var(--light-gray);
+  border-bottom-color: var(--light-gray);
+}
+
+body.night .post-body .table-striped tbody tr:nth-of-type(2n+1) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.night .post-body .table-hover tbody tr:hover {
+  background-color: rgba(255, 255, 255,.075);
+}
+
+/* **************** blockquote **************** */
+
+.post-body blockquote hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.post-body blockquote hr::after {
+  display: inline-block;
+  content: "\27BF";
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.post-body blockquote {
+  padding-top: 1rem;
+  padding-left: calc(var(--page-margin) + 3px + 3vw);
+  padding-right: calc(var(--page-margin) + 3px + 3vw);
+  padding-bottom: 0;
+  /* border-left: 5px solid rgba(3,123,186,.3); */
+  /* border-left: 5px solid rgba(65,180,241,.3); */
+  border-left: none;
+  margin-left: calc(-1 * var(--page-margin));
+  margin-right: calc(-1 * var(--page-margin));
+  /* to keep margin of last child */
+  /* https://stackoverflow.com/a/1939980 */
+  overflow: auto;
+}
+
+.post-body blockquote.twitter-tweet {
+  padding-bottom: 1rem;
+}
+
+.post-body blockquote,
+.post-body blockquote *:not(a):not(code) {
+  color: var(--color-text);
+}
+
+body.night blockquote *:not(a) {
+  color: var(--color-text) !important;
+}
+
+body.night blockquote a * {
+  color: inherit !important;
+}
+
+.post-body blockquote p,
+.post-body footer {
+  margin-bottom: 1rem;
+}
+
+.post-body footer {
+  display: inline-block;
+}
+
+/* **************** toc **************** */
+
+.toc a {
+  text-decoration: none;
+}
+
+.toc .toc-content {
+    padding-left: var(--page-margin);
+  }
+
+.toc .toc-content > ul {
+  padding: 0;
+}
+
+.toc .toc-content > ul > ul {
+  padding: 0;
+}
+
+
+/* **************** image **************** */
+
+img,
+.post-body img,
+.stream-container .post .post-body-wrapper .post-body img {
+  border-radius: 0;
+  object-fit: contain;
+}
+
+.post-body img:not([class]),
+.stream-container .post .post-body-wrapper .post-body img:not([class]) {
+  border: solid 1px var(--dark-gray);
+  margin: auto;
+}
+
+.post-body figure {
+  display: inline-block;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.post-body figure figcaption {
+  text-align: center;
+}
+
+/* .post-body figure figcaption:after {
+  width: 30%;
+  content: "/";
+  display: block;
+  margin: auto;
+  border-bottom: 1px solid var(--gray);
+} */
+
+.post-body figure figcaption p:last-of-type {
+  margin-bottom: 0;
+}
+
+.post-body figure.no-border img {
+  border: none !important;
+}
+
+.post-body figure.full-width {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.post-body figure.full-width img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+/* **************** animated sticker & video & audio **************** */
+
+.post-body .sticker {
+  border-radius: 0;
+}
+
+.post-body .sticker,
+.post-body .post-video {
+  display: block;
+  margin: auto;
+  margin-bottom: 1rem;
+  object-fit: contain;
+  max-width: 100%;
+}
+
+body.night .post-body .sticker,
+body.night .post-body .post-video {
+  opacity: .8;
+}
+
+.post-body audio {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+
+/* **************** list pages **************** */
+
+.post-item-meta {
+  opacity: .6;
+}
+
+.post-item-meta .material-icons{
+  vertical-align: middle;
+  margin-bottom: 3px;
+  font-size: 1rem;
+  margin-left: 1.5rem;
+}
+
+.post-item-wrapper:not(.post-item-wrapper-no-hover):hover .post-item-title {
+  text-decoration-thickness: 2px !important;
+}
+
+/* **************** pagination **************** */
+
+.pagination a {
+  text-decoration: none;
+}
+
+/* **************** taxonomy **************** */
+
+.stream-container .post-list-container .post-item-wrapper .post-item .post-item-info-wrapper .post-item-title,
+.stream-container .post-list-container > * .post-item-wrapper .post-item .post-item-info-wrapper .post-item-title {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.stream-container .post-list-container .post-item-wrapper .post-item .post-item-info-wrapper .post-item-title-small,
+.stream-container .post-list-container > * .post-item-wrapper .post-item .post-item-info-wrapper .post-item-title-small {
+  font-size: 18px;
+  color: var(--gray);
+  font-weight: bolder;
+}
+
+/* **************** archive list page **************** */
+
+.archive-body {
+  margin-top: -11px;
+}
+
+.archive--year,
+h2.archive--year,
+body.night h2.archive--year {
+  color: var(--gray);
+}
+
+.archive--year:first-of-type,
+h2.archive--year:first-of-type,
+body.night h2.archive--year:first-of-type {
+  margin-top: 0;
+}
+
+.archive--list-item {
+  text-indent: calc(-1 * var(--archive-indent) - 1rem);
+  padding-left: calc(var(--archive-indent) + 0.3rem);
+  list-style:none;
+}
+
+.archive--date {
+  display: inline-block;
+  width: var(--archive-indent);
+  padding-left: calc(var(--archive-indent) + 1rem);
+  font-family: fira mono,cousine,Monaco,Menlo,source code pro,monospace;
+}
+
+.post-item-summary {
+  color: #676D71;
+}
+
+/* **************** codepen fix **************** */
+
+.cp_embed_wrapper {
+  margin-bottom: 1rem;
+}
+
+/* **************** gist fix **************** */
+
+/* the last remainder of my blogger css */
+/* https://gist.github.com/loikein/7b2a4f7d98d366a732dafd755b5248ff */
+.gist table,
+.gist table tr th,
+.gist table tr td{
+  border: 0px;
+}
+
+.gist tbody tr:nth-of-type(odd) {
+  background-color: unset;
+}
